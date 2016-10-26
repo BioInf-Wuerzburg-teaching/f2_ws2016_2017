@@ -44,10 +44,21 @@ while($Zaehler>0)
 };
 print $Zaehler,"\n";
 
-$Zaehler1="10";
+$Zaehler1=10;
 while($Zaehler1)
 {
     print $Zaehler1, "\n";
     $Zaehler1--;
 }
 print $Zaehler1,"\n";
+
+$z=10;
+while($z>=0)
+{
+    $z--;
+    while($z<8 and $z>2)
+    {
+	print $z--,"\n";
+    }
+}
+    
