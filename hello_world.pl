@@ -36,3 +36,8 @@ print $zaehler,"\n";
 $zaehler2=A;
 $zaehler2++;
 print $zaehler2,"\n";
+
+$Zaehler="10";
+while($Zaehler>0){print $Zaehler--,"\n"};
+print $Zaehler,"\n";
+    
