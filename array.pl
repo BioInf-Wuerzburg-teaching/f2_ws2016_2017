@@ -1,5 +1,6 @@
 use warnings;
 
+print "\narray-for-Schleife\n\n";
 @willi=('a','b','c','d');
 #print @willi,"\n";
 
