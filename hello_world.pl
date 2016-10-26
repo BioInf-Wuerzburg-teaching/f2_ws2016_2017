@@ -26,3 +26,8 @@ $willi=$maja;
 $maja=$fliegt;
 
 print "Willi:$willi,Maja:$maja\n";
+
+$zaehler=5;
+$zaehler=$zaehler+1;
+$zaehler=$zaehler+1;
+print $zaehler,"\n";
