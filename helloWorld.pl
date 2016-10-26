@@ -29,4 +29,37 @@ $zaehler=10;
 #$zaehler=$zaehler+1;
 #$zaehler--;
 $zaehler++;
-print $zaehler,"\n";
+print $zaehler,"\n\n";
+
+$var=10;
+#while ($var)
+#{
+#    print $var,"\n";
+#    $var--;
+#}
+
+#print "\n";
+
+#while (10==$var)
+#{
+#    print --$var,"\n";
+#}
+#print $var,"\n";
+
+#print "\n";
+
+#while (abc==ABC)
+#{
+#    print --$var,"\n";
+#}
+#print $var,"\n"
+
+while ($var)
+{
+    $var--;
+    while ($var<=7 & $var>=3)
+    {
+    print $var,"\n";
+    $var--;
+    }
+}
