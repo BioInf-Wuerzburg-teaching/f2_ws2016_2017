@@ -16,3 +16,10 @@ $speich=$eins;
 $eins=$zwei;
 $zwei=$speich;
 print "$eins,$zwei\n";
+
+$willi="Blume";
+$maja="Gras";
+$flip=$willi;
+$willi=$maja;
+$maja=$flip;
+print "Willi:$willi, Maja:$maja\n";
