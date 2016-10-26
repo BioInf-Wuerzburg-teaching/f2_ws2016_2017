@@ -19,7 +19,7 @@ print "$eins,$zwei\n";
 
 $willi="Blume";
 $maja="Gras";
-$flip=$willi;
+$notiz=$willi;
 $willi=$maja;
-$maja=$flip;
+$maja=$notiz;
 print "Willi:$willi, Maja:$maja\n";
