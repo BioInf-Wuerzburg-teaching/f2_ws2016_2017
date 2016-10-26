@@ -57,7 +57,7 @@ $var=10;
 while ($var)
 {
     $var--;
-    while ($var<=7 & $var>=3)
+    while ($var<=7 && $var>=3)
     {
     print $var,"\n";
     $var--;
