@@ -37,8 +37,28 @@ print "Zettelchen:\t$zettelchen\n\nWilli:\t\t$willi\nMaja:\t\t$maja\n\n";
 
 
 $zaehler=5;
-$zaehler=$zaehler+1;
+#$zaehler=$zaehler+1;
 print "$zaehler\n\n";
-$zaehler="AZ";
-$zaehler++;
+#$zaehler="AZ";
+$zaehler--;
 print "$zaehler\n\n";
+
+$zahl=1;
+
+while ($zahl <= 10){
+    print $zahl++, "\n";
+    sleep 1;
+}
+
+print "\n";
+
+$zahl=0;
+
+print ($zahl++,"\n") while $zahl <=5;
+
+print "\n";
+
+for ( $i=1 ; $i <= 10 ; $i ++ ) {
+   print $i-1 , " -> " , $i**3 , "\n" ;
+   sleep 1;
+ }
