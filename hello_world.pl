@@ -16,4 +16,13 @@ $zwei=1;
 $speicher=$eins;
 $eins=$zwei;
 $zwei=$speicher;
-print "$eins,$zwei\n"
+print "$eins,$zwei\n";
+
+$willi="Blume";
+$maja="Gras";
+
+$fliegt=$willi;
+$willi=$maja;
+$maja=$fliegt;
+
+print "Willi:$willi,Maja:$maja\n";
