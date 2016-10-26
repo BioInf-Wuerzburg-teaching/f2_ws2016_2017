@@ -1,4 +1,4 @@
-#use warnings;
+use warnings;
 print "Hello World!\n",$bla;
 print 5,"\n";
 print 5+5,"\n";
@@ -23,3 +23,10 @@ $notiz=$willi;
 $willi=$maja;
 $maja=$notiz;
 print "Willi:$willi, Maja:$maja\n";
+
+$zaehler=10;
+#$zaehler=$zaehler+1;
+#$zaehler=$zaehler+1;
+#$zaehler--;
+$zaehler++;
+print $zaehler,"\n";
