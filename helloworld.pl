@@ -36,3 +36,9 @@ $maja=$zettelchen;
 print "Zettelchen:\t$zettelchen\n\nWilli:\t\t$willi\nMaja:\t\t$maja\n\n";
 
 
+$zaehler=5;
+$zaehler=$zaehler+1;
+print "$zaehler\n\n";
+$zaehler="AZ";
+$zaehler++;
+print "$zaehler\n\n";
