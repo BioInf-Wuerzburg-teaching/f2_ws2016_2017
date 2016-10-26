@@ -51,10 +51,10 @@ while ($zahl>0)
     $zahl--;
     while ($zahl<8 and $zahl>2)
     {print $zahl--, "\n";
-     sleep 1;
+    
     }
 }
-
+  sleep 1;
 
 print "\n", $zahl,"\n\n";
 sleep 1;
@@ -69,3 +69,13 @@ for ( $i=1 ; $i <= 10 ; $i ++ )
 {
    print $i-1 , " -> " , $i**3 , "\n" ;
 }
+
+$zaehler=-1;
+
+print $zaehler,"\n";
+$zaehler++ and --$zaehler and $zaehler--;
+print $zaehler,"\n";
+
+$zaehler=-1;
+++$zaehler or $zaehler-- or $zaehler--;
+print $zaehler,"\n";
