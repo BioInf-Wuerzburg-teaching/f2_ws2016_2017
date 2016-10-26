@@ -43,14 +43,21 @@ print "$zaehler\n\n";
 $zaehler--;
 print "$zaehler\n\n";
 
-$zahl=1;
+$zahl=10;
 
-while ($zahl <= 10){
-    print $zahl++, "\n";
-    sleep 1;
+while ($zahl>0)
+{
+    
+    $zahl--;
+    while ($zahl<8 and $zahl>2)
+    {print $zahl--, "\n";
+     sleep 1;
+    }
 }
 
-print "\n";
+
+print "\n", $zahl,"\n\n";
+sleep 1;
 
 $zahl=0;
 
@@ -58,7 +65,7 @@ print ($zahl++,"\n") while $zahl <=5;
 
 print "\n";
 
-for ( $i=1 ; $i <= 10 ; $i ++ ) {
+for ( $i=1 ; $i <= 10 ; $i ++ ) 
+{
    print $i-1 , " -> " , $i**3 , "\n" ;
-   sleep 1;
- }
+}
