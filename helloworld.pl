@@ -43,6 +43,10 @@ print "$zaehler\n\n";
 $zaehler--;
 print "$zaehler\n\n";
 
+
+#while-Schleife
+
+print "while-Schleife\n\n";
 $zahl=10;
 
 while ($zahl>0)
@@ -65,10 +69,22 @@ print ($zahl++,"\n") while $zahl <=5;
 
 print "\n";
 
+
+#For-Schleife
+
+print "For-Schleife\n\n";
+
 for ( $i=1 ; $i <= 10 ; $i ++ ) 
 {
    print $i-1 , " -> " , $i**3 , "\n" ;
 }
+
+
+print "\n\n\n";
+
+
+#and-or-Funktion
+print "and-or-Funktion\n\n";
 
 $zaehler=-1;
 
@@ -79,3 +95,7 @@ print $zaehler,"\n";
 $zaehler=-1;
 ++$zaehler or $zaehler-- or $zaehler--;
 print $zaehler,"\n";
+
+
+print "\n\n\n";
+
