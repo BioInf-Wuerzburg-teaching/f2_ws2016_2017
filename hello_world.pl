@@ -38,6 +38,16 @@ $zaehler2++;
 print $zaehler2,"\n";
 
 $Zaehler="10";
-while($Zaehler>0){print $Zaehler--,"\n"};
+while($Zaehler>0)
+{
+    print $Zaehler--,"\n";
+};
 print $Zaehler,"\n";
-    
+
+$Zaehler1="10";
+while($Zaehler1)
+{
+    print $Zaehler1, "\n";
+    $Zaehler1--;
+}
+print $Zaehler1,"\n";
