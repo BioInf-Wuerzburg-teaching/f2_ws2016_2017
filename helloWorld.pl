@@ -54,12 +54,15 @@ $var=10;
 #}
 #print $var,"\n"
 
-while ($var)
+while ($var>=0)
 {
     $var--;
     while ($var<=7 && $var>=3)
     {
-    print $var,"\n";
-    $var--;
+    print $var--,"\n";
     }
 }
+
+print "\n",$var,"\n";
+$var++ and $var--;
+print $var,"\n";
