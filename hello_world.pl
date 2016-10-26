@@ -30,4 +30,9 @@ print "Willi:$willi,Maja:$maja\n";
 $zaehler=5;
 $zaehler=$zaehler+1;
 $zaehler=$zaehler+1;
+$zaehler++;
 print $zaehler,"\n";
+
+$zaehler2=A;
+$zaehler2++;
+print $zaehler2,"\n";
