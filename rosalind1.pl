@@ -15,7 +15,6 @@ for($i=0;$i<$ende;$i++)
     if($bases[$i] eq 'A')
     {$A++}
 
-    
     if($bases[$i] eq 'C')
     {$C++}
 
@@ -25,6 +24,6 @@ for($i=0;$i<$ende;$i++)
     if($bases[$i] eq 'T')
     {$T++}
 }
-print "$A,$C,$G,$T\n";
+print "A\tC\tG\tT\n$A\t$C\t$G\t$T\n";
 
 
