@@ -11,7 +11,7 @@ for($i=0;$i<$l;$i++)
     
 }
 
-foreach $schluessel (keys %hash)
+foreach $schluessel (sort keys %hash)
 {
     print "$schluessel ";
     print $hash{$schluessel},"\n";
