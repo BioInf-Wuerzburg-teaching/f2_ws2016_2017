@@ -10,15 +10,15 @@ for($i=0;$i<$l;$i++)
     {
 	$A++;
     }
-    if($bases[$i]eq"C")
+    elsif($bases[$i]eq"C")
     {
 	$C++;
     }
-    if($bases[$i]eq"G")
+    elsif($bases[$i]eq"G")
     {
 	$G++;
     }
-    if($bases[$i]eq"T")
+    elsif($bases[$i]eq"T")
     {
 	$T++;
     }
