@@ -16,3 +16,10 @@ foreach $schluessel (sort keys %hash)
     print "$schluessel ";
     print $hash{$schluessel},"\n";
 }
+
+@array=(3,7,5,1,46,18,225,4,42,5);
+print "@array", "\n";
+@arrayso=sort(@array);
+print "@arrayso", "\n";
+@arrayso2=sort{$a <=> $b}(@array);
+print "@arrayso2", "\n";
