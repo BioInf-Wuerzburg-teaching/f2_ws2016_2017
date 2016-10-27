@@ -1,13 +1,14 @@
+use strict;
 use warnings;
-$dna='AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTZCTGATAGCAGC';
-@bases=split(//,$dna);
-$l=@bases;
-%hash=();
+my $dna='AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTZCTGATAGCAGC';
+my @bases=split(//,$dna);
+my $l=@bases;
+my %hash=();
     
-for($i=0;$i<$l;$i++)
+for(my $i=0;$i<$l;$i++)
 {
-    $nucl=$bases[$i];
-    $hash{$nucl}++;
+   my $nucl=$bases[$i];
+   $hash{$nucl}++;
     
     
 }
@@ -19,7 +20,7 @@ if (exists $hash{Z})
 
 print "A ", $hash{A}, "\n";
 
-foreach $schluessel (sort keys %hash)
+foreach my $schluessel (sort keys %hash)
 {
     if ($schluessel eq "A")
     {
