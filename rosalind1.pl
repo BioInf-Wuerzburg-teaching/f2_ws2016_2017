@@ -26,7 +26,7 @@ for ($i=0;$i<$l;$i++)
     }
     else
     {
-	print "no base\n";
+	print "Error: no base\n";
     }
 }
 
