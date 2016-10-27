@@ -27,7 +27,7 @@ for($i=0;$i<$l;$i++)
     }
     
 }
-print $A;
-print $C;
-print $G;
-print $T;
+print $A,"\n";
+print $C,"\n";
+print $G,"\n";
+print $T,"\n";
