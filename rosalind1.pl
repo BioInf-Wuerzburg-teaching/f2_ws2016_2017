@@ -5,25 +5,25 @@ $l=@bases;
     
 for($i=0;$i<$l;$i++)
 {
-    # print $bases[$i];
     if($bases[$i]eq"A")
     {
-	#print $bases[$i];
 	$A++;
     }
-     if($bases[$i]eq"C")
+     elsif($bases[$i]eq"C")
     {
-	#print $bases[$i];
 	$C++;
-    } if($bases[$i]eq"G")
+    } 
+    elsif($bases[$i]eq"G")
     {
-	#print $bases[$i];
 	$G++;
     }
-     if($bases[$i]eq"T")
+     elsif($bases[$i]eq"T")
     {
-	#print $bases[$i];
 	$T++;
+    }
+    else
+    {
+	print "Achtung: keine Base"
     }
     
 }
