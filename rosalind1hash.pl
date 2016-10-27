@@ -7,10 +7,12 @@ $l=@bases;
 for($i=0;$i<$l;$i++)
 {
     $nucl=$bases[$i];
-    $hash{$nucl}=1;
+    $hash{$nucl}++;
+    
 }
 
 foreach $schluessel (keys %hash)
 {
-    print "$schluessel\n";
+    print "$schluessel ";
+    print $hash{$schluessel},"\n";
 }
