@@ -6,23 +6,17 @@ $dna='CGATTACGCACTAGGTCTGGGGGTAACGCGTGTCTTGAGAAACTGAGGGCACACGTGGGTTAAGAGCTCAGAAT
 
 
 $ende=@bases;
-$A=0;
-$C=0;
-$G=0;
-$T=0;
+%hash=();
 for($i=0;$i<$ende;$i++)
 {
-    if($bases[$i] eq 'A')
-    {$A++}
-
-    if($bases[$i] eq 'C')
-    {$C++}
-
-    if($bases[$i] eq 'G')
-    {$G++}
+    $nucl=$bases[$i];
+    $hash{$nucl}++;
     
-    if($bases[$i] eq 'T')
-    {$T++}
+ 
 }
-#print "\nA\tC\tG\tT\n$A\t$C\t$G\t$T\n\n";
-print "\nA  C  G  T\n$A $C $G $T\n\n";
+foreach $schluessel(sort keys%hash)
+{
+    print "$schluessel ";
+    print $hash{$schluessel},"\n";
+   
+}
