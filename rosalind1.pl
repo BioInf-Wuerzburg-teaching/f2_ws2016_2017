@@ -22,6 +22,10 @@ for($i=0;$i<$l;$i++)
     {
 	$T++;
     }
+    else
+    {
+	print "Fehler: keine Base"
+    }
 }
 print "$A $C $G $T\n";
 
