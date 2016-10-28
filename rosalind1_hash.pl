@@ -1,37 +1,17 @@
 use strict;
 use warnings;
-my $dna='AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTZCTGATAGCAGC';
-my @bases=split(//,$dna);
-my $l=@bases;
-my %hash=();
-    
-for(my $i=0;$i<$l;$i++)
-{
-   my $nucl=$bases[$i];
-   $hash{$nucl}++;
-    
-    
-}
+use functions;
 
-if (exists $hash{Z})
-{
-    print "Z ist da!\n";
-}
+my $dna='AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC';
 
-print "A ", $hash{A}, "\n";
+my %huhu= &functions::rosalind1($dna);
 
-foreach my $schluessel (sort keys %hash)
+#print %huhu;
+
+foreach my $schluessel (sort keys %huhu)
 {
-    if ($schluessel eq "A")
-    {
 	print "$schluessel ";
-	print $hash{$schluessel}, "\n";
-    }
+	print $huhu{$schluessel}, "\n";
 }
 
-# @Array=(3,7,5,1,46,18,225,4,42,5);
-# print "@Array", "\n";
-# @ArrayS=sort(@Array);
-# print "@ArrayS", "\n";
-# @ArrayS2=sort{$b <=> $a}(@Array);
-# print "@ArrayS2\n";
+
