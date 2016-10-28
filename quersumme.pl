@@ -1,20 +1,11 @@
 use strict;
 use warnings;
+use functions;
 
 
 #quersumme
 
-my $zahl=123456;
-my @ziffern=split(//,$zahl);
-my $l=@ziffern;
-my $result=0;
-
-for (my $i=0;$i<$l;$i++)
-{
-    $result=$result+$ziffern[$i];
-}
-
-print "$result\n\n";
+print &functions::quersumme(123456),"\n\n";
 
 
 #nach quersumme sortieren
@@ -24,28 +15,7 @@ print "@num\n";
 
 @num=sort
 {
-    my $zahl=$a;
-    my @ziffern=split(//,$zahl);
-    my $l=@ziffern;
-    my $erg=0;
-
-    for (my $i=0;$i<$l;$i++)
-    {
-	$erg=$erg+$ziffern[$i];
-    }
-
-    $zahl=$b;
-    @ziffern=split(//,$zahl);
-    $l=@ziffern;
-    my $result=0;
-
-    for (my $i=0;$i<$l;$i++)
-    {
-	$result=$result+$ziffern[$i];
-    }
-
-    $erg<=>$result or $a<=>$b;
-    
+    &functions::quersumme($a)<=>&functions::quersumme($b) or $a<=>$b;
 }(@num);
 
 print "@num\n\n";
