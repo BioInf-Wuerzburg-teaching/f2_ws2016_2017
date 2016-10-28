@@ -47,4 +47,16 @@ return %hash;
 }
 
 
+sub datei
+{
+    my $datei=$_[0];
+    open(HAND,$datei) or die;
+    my  $inhalt=<HAND>;
+    chomp $inhalt;
+
+    close HAND;
+
+    return $inhalt;
+}
+
 1;
