@@ -45,13 +45,13 @@ sub rosalind1
     return %hash;
 }
 
-sub openFile
+sub openFile      #read only
 {
     my $file=$_[0];
-    open(BLA,$file) or die;
-    my $content=<BLA>;
+    open(HAND,'<',$file) or die;
+    my $content=<HAND>;
     chomp $content;
-    close BLA;
+    close HAND or die;
 
     return $content;
 }
