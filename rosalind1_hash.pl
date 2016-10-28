@@ -2,7 +2,9 @@ use strict;
 use warnings;
 use functions;
 
-my $dna='AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC';
+open (BLA,"rosalind1seq.txt") or die;
+my $dna= <BLA>;
+chomp $dna;
 
 my %huhu= &functions::rosalind1($dna);
 
@@ -10,8 +12,8 @@ my %huhu= &functions::rosalind1($dna);
 
 foreach my $schluessel (sort keys %huhu)
 {
-	print "$schluessel ";
+	print "'$schluessel' ";
 	print $huhu{$schluessel}, "\n";
 }
 
-
+close BLA;
