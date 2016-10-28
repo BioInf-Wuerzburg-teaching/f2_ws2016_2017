@@ -15,4 +15,20 @@ sub add
     return $s1 + $s2;
 }
 
+sub quersumme
+{
+    my $zahl=$_[0];
+    my @ziffern=split(//,$zahl);
+    my $l=@ziffern;
+    my $erg=0;
+
+    for(my $i=0;$i<$l;$i++)
+    {
+	$erg = $erg+$ziffern[$i];
+    }
+
+    return $erg;
+}
+
+
 1;
