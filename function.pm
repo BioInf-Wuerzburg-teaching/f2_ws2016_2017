@@ -30,5 +30,36 @@ sub quersumme
     return $quer;
 }
 
+sub dnahash
+{
+
+    
+	my @bases=split(//,$_[0]);
+
+
+my $ende=@bases;
+my $A=0;
+my $C=0;
+my $G=0;
+my $T=0;
+for(my $i=0;$i<$ende;$i++)
+{
+    if($bases[$i] eq 'A')
+    {$A++}
+
+    if($bases[$i] eq 'C')
+    {$C++}
+
+    if($bases[$i] eq 'G')
+    {$G++}
+    
+    if($bases[$i] eq 'T')
+    {$T++}
+
+}
+return my  %dnahash=(A=>$A, C=>$C, G=>$G, T=>$T);
+
+}
+
 
 1;
