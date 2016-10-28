@@ -61,5 +61,16 @@ return my %dnahash=(A=>$A, C=>$C, G=>$G, T=>$T);
 
 }
 
+sub dateizeile
+{
+    open(IN,$_[0]) or die;
+    return <IN>;
+    close IN;
+
+    
+
+}
+    
+
 
 1;
