@@ -2,11 +2,8 @@ use strict;
 use warnings;
 use functions;
 
-open (BLA,"sequenz1.txt") or die;
 
-my $dna=<BLA>;
-
-chomp $dna;
+my $dna= &functions::datei("sequenz1.txt")
     
 my %huhu= &functions::rosalind1($dna);
 
