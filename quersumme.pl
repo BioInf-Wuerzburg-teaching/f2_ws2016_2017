@@ -49,7 +49,10 @@ for (my $i=0; $i<=$l-1; $i++)
     $querb = $querb + $reihe[$i];   
 }    
 
-$quer<=>$querb;
+$quer<=>$querb || $a<=>$b;
+
+
+
 }(@num);
 
 print "@sortnum\n";
