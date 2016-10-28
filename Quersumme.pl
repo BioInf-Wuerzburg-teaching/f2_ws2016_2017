@@ -1,17 +1,8 @@
 use strict;
 use warnings;
+use functions;
 
-my $zahl=123456;
-my @ziffern=split(//,$zahl);
-my $l=@ziffern;
-my $erg=0;
-
-for(my $i=0;$i<$l;$i++)
-{
-    $erg = $erg+$ziffern[$i];
-}
-
-print "$erg","\n";
+print &functions::quersumme(123456);
 
 
 my @num=(1420,2004,3526,99999,80023,850,356,115,000001,999999);
