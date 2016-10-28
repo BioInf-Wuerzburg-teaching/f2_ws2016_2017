@@ -28,4 +28,22 @@ sub quersumme
     return $result;
 }
 
+sub rosalind1
+{
+    my $DNA=$_[0];
+    my @bases=split(//,$DNA);
+    my $l=@bases;
+    my %hash=();
+       
+    for (my $i=0;$i<$l;$i++)
+    {
+	my $nucl=$bases[$i];
+	$hash{$nucl}++;
+    
+    }
+    
+    return %hash;
+}
+
+
 1;
