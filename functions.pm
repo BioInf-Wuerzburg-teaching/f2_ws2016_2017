@@ -50,7 +50,7 @@ return %hash;
 sub datei
 {
     my $datei=$_[0];
-    open(HAND,$datei) or die;
+    open(HAND,'<',$datei) or die;
     my  $inhalt=<HAND>;
     chomp $inhalt;
 
