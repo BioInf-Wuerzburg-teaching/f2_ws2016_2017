@@ -1,12 +1,10 @@
 use strict;
 use warnings;
+use functions;
 
 for(my $i=1; $i<=10;$i++)
 {
-    &helloworld;
+    print &functions::helloworld;
 }
 
-sub helloworld
-{
-    print "Hello World\n";
-}
+print &functions::add(2,3),"\n";
