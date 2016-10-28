@@ -14,4 +14,18 @@ sub add
     return $sum1+$sum2;
 }
 
+sub quersumme
+{
+    my $zahl=$_[0];
+    my @ziffern=split(//,$zahl);
+    my $l=@ziffern;
+    my $result=0;
+
+    for (my $i=0;$i<$l;$i++)
+    {
+	$result=$result+$ziffern[$i];
+    }
+    return $result;
+}
+
 1;
