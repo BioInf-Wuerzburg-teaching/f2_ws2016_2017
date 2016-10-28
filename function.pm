@@ -57,7 +57,7 @@ for(my $i=0;$i<$ende;$i++)
     {$T++}
 
 }
-return my  %dnahash=(A=>$A, C=>$C, G=>$G, T=>$T);
+return my %dnahash=(A=>$A, C=>$C, G=>$G, T=>$T);
 
 }
 
