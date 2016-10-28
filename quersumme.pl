@@ -44,7 +44,8 @@ print "@num\n";
 	$result=$result+$ziffern[$i];
     }
 
-    $erg<=>$result;
+    $erg<=>$result or $a<=>$b;
+    
 }(@num);
 
 print "@num\n\n";
