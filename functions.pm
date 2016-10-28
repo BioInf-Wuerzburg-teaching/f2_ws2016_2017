@@ -45,5 +45,15 @@ sub rosalind1
     return %hash;
 }
 
+sub openFile
+{
+    my $file=$_[0];
+    open(BLA,$file) or die;
+    my $content=<BLA>;
+    chomp $content;
+    close BLA;
+
+    return $content;
+}
 
 1;
