@@ -36,7 +36,7 @@ for(my $i=0;$i<$l;$i++)
 {
     $ergb = $ergb+$ziffer[$i];
 }
+$erg<=>$ergb||$a<=>$b;
 
-$erg<=>$ergb;
 }(@num);
 print"@num\n";
