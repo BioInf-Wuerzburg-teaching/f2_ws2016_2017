@@ -59,4 +59,40 @@ sub datei
     return $inhalt;
 }
 
+sub replace_bases
+{ 
+    #my @array = @{$_[0]};
+    my @array = @_;
+
+  for(my $i=0; $i<@array; $i++)
+  {
+      if($array[$i] eq "T")
+      {
+	  $array[$i] = "U";
+      }
+  }
+
+  return @array;
+}
+
+
+
+sub transcription
+{
+    my $DNA=$_[0];
+    my @bases=split(//,$DNA);
+    my $l=@bases;
+
+    for (my $i=0; $i<$l; $i++)
+    {
+	if ($bases[$i] eq "T")
+	{
+	    $bases[$i] = "U";
+	}
+    }
+    return @bases;
+}
+
+
+
 1;
