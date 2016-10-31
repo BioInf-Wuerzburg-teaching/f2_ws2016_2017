@@ -55,4 +55,34 @@ sub datei
     close DATEN;
     return $inhalt;
 }
+
+sub replace_bases
+{   
+    my @array = @{$_[0]};
+
+    for(my $i=0; $i<@array; $i++)
+    {
+	if($array[$i] eq "T")
+	{
+	    $array[$i]= "U";
+	}
+    }
+    return@array;
+}
+
+sub transkription
+{
+    my $dna=$_[0];
+    my @bases=split(//, $dna);
+    my $l=@bases;
+
+    for (my $i=0; $i<$l; $i++)
+    {
+	if ($bases[$i] eq "T")
+        {
+	    $bases[$i] = "U";
+	}
+    }
+return @bases;
+}
 1;
