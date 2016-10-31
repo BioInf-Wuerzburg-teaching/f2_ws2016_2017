@@ -26,4 +26,12 @@ else
 #print "@bla\n";
 
 my @bla=split(/A\w+AT/,$dna);
-print "@bla\n";
+print "@bla\n\n";
+
+
+my $seq="AATCATGATAATCATGA";
+
+while ($seq=~/A(\w+?)T[GC]/g)
+{
+    print $1,"\n";
+}
