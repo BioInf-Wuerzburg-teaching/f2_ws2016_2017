@@ -46,34 +46,39 @@ for(my $i=0;$i<$ende;$i++)
 print "\n\n","RNA:\n";
 for(my $i=0;$i<$ende;$i++)
 {
-    if($bases[$i] eq 'A')
-    {print "A";}
+   # if($bases[$i] eq 'A')
+   # {print "A";}
 
-    if($bases[$i] eq 'C')
-    {print "C";}
+   # if($bases[$i] eq 'C')
+   # {print "C";}
 
-    if($bases[$i] eq 'G')
-    {print "G";}
+   # if($bases[$i] eq 'G')
+   # {print "G";}
     
     if($bases[$i] eq 'T')
     {print "U";}
-    
+    else
+    {
+	print "$bases[$i]";
+    }
 }
 
 print "\n\n","Revers:\n";
 
 for(my $j=$ende-1;$j>-1;$j--)
-{   
-    if($bases[$j] eq 'A')
-    {print "T";}
+{ 
 
-    if($bases[$j] eq 'C')
-    {print "G";}
+    print "$bases[$j]";
+ #   if($bases[$j] eq 'A')
+ #   {print "T";}
 
-    if($bases[$j] eq 'G')
-    {print "C";}
+ #   if($bases[$j] eq 'C')
+ #   {print "G";}
+
+ #   if($bases[$j] eq 'G')
+ #   {print "C";}
     
-    if($bases[$j] eq 'T')
-    {print "A"}
+ #   if($bases[$j] eq 'T')
+ #   {print "A"}
 }
 print "\n";
