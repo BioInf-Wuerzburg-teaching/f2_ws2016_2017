@@ -56,4 +56,20 @@ sub openFile      #read only
     return $content;
 }
 
+sub transcription
+{
+    my $DNA=$_[0];
+    my @bases=split(//,$DNA);
+    my $l=@bases;
+
+    for (my $i=0;$i<$l;$i++)
+    {
+	if ($bases[$i] eq "T")
+	{
+	    $bases[$i] = "U";
+	}	
+    }
+    return @bases;
+}
+
 1;
