@@ -2,39 +2,27 @@ use warnings;
 use strict;
 use functions;
 
-open(FAS, "fasta.txt") or die;
-my @header;
-#my $dnastring=0;
+open(FAS,'<', "fasta.txt") or die;
+my $header;
 my %hash;
-my $fas1;
 
-while($fas1=<FAS>)
+while(my $fas1=<FAS>)
 {
-    if ($fas1=~/>/)
+    if ($fas1=~/^>(\S+)/) #Dach sagt es soll am Anfang der Zeile sein
 	
- {
-     @header = split(/\s/,$fas1);
-     # if($dnastring)
-     # {
-     # 	 print $dnastring, "\n";
-     # }
-     #  print "\n", $header[0],"\n";
-      
-    # $dnastring="";
- }
+    {
+	$header = $1;
+	#@header = split(/\s/,$fas1);
+    }
     
     else
 	
- {
-     chomp $fas1;
-     
-    # $dnastring=$dnastring.$fas1;
-     $hash{$header[0]}.=$fas1;
-     
- }
+    {
+	chomp $fas1;
+	$hash{$header}.=$fas1;
+    }
 }
 
-#print $dnastring, "\n";
 print Dumper(\%hash);
 
 close FAS or die;
