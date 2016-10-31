@@ -1,0 +1,11 @@
+>ID1 Bla
+ACT
+GAT
+C
+>ID2 Blub
+ATTTT
+AC
+>ID3 Trulala
+A
+>ID4
+CTA
