@@ -68,17 +68,17 @@ print "\n\n","Revers:\n";
 for(my $j=$ende-1;$j>-1;$j--)
 { 
 
-    print "$bases[$j]";
- #   if($bases[$j] eq 'A')
- #   {print "T";}
 
- #   if($bases[$j] eq 'C')
- #   {print "G";}
+    if($bases[$j] eq 'A')
+    {print "T";}
 
- #   if($bases[$j] eq 'G')
- #   {print "C";}
+    if($bases[$j] eq 'C')
+    {print "G";}
+
+    if($bases[$j] eq 'G')
+    {print "C";}
     
- #   if($bases[$j] eq 'T')
- #   {print "A"}
+    if($bases[$j] eq 'T')
+    {print "A"}
 }
 print "\n";
