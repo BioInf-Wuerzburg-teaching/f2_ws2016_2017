@@ -94,5 +94,31 @@ sub transcription
 }
 
 
+sub read_fasta
+{
+  open(FAS,'<',$_[0]) or die;
+  my $header;
+  my %hash;
+
+  while(my $fas1=<FAS>)
+  {
+      if ($fas1=~/^>(\S+)/) #Dach sagt es soll am Anfang der Zeile sein
+	
+      {
+	  $header = $1;
+      }
+    
+      else
+	
+      {
+	  chomp $fas1;
+	  $hash{$header}.=$fas1;
+      }
+  }
+  
+  close FAS or die;
+  return %hash;
+  
+}
 
 1;
