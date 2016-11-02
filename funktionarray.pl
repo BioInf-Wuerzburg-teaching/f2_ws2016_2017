@@ -20,15 +20,15 @@ my @arrayb=(4,5,6,7,8,9);
 
 sub compare
 {
-    # my (@array1, @array2)=@_;
-    my @array1=@{$_[0]};
-    $array1[0]=9;
-    my @array2=@{$_[1]};
-    my $length_array1=@array1;
-    my $length_array2=@array2;
+     my ($array1, $array2)=@_;
+   # my @array1=@{$_[0]};
+     $array1->[0]=9;
+   # my @array2=@{$_[1]};
+    my $length_array1=@{$array1};
+    my $length_array2=@{$array2};
 
-    print "@array1\n";
-    print "@array2\n";
+   # print "@array1\n";
+   # print "@array2\n";
 
     if ($length_array1==$length_array2)
     {
@@ -45,3 +45,5 @@ sub compare
 print &compare(\@array, \@array), "\n";
 
 print &compare(\@array, \@arrayb), "\n";
+
+print @array, "\n";
