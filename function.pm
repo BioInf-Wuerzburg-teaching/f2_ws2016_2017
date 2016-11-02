@@ -31,6 +31,7 @@ sub quersumme
 }
 
 sub dnahash
+    
 {
 
     
@@ -70,7 +71,33 @@ sub dateizeile
     
 
 }
-    
+
+sub read_fasta
+{    
+    open (ZEILE,'<',$_[0]) || die;
+    my $header;
+    my %hash;   
+
+    while(my $zeile1=<ZEILE>)
+    {
+	if($zeile1=~/^>(\S+)/)
+	{
+	    $header =$1;
+	}
+	else
+	{
+	    chomp $zeile1;
+	    $hash{$header}.=$zeile1; 
+	}
+    }
+
+    close ZEILE || die;
+    return %hash;
+}
+#use Data::Dumper;
+#print Dumper(\%hash);
+
+
 
 
 1;
