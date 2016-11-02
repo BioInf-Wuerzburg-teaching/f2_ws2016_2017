@@ -96,7 +96,7 @@ sub transcription
 
 sub read_fasta
 {
-  open(FAS,'<',$_[0]) or die;
+  open(FAS,'<',$_[0]) or die("can't open file '$_[0]': $!");
   my $header;
   my %hash;
 
