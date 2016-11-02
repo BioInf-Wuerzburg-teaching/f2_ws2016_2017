@@ -62,15 +62,15 @@ return my %dnahash=(A=>$A, C=>$C, G=>$G, T=>$T);
 
 }
 
-sub dateizeile
+#liefert die erste Zeile einer Datei.
+sub dateizeile 
 {
-    open(IN,$_[0]) or die;
-    return <IN>;
-    close IN;
-
-    
-
+    open(IN,'<',$_[0]) or die("can't open file '$_[0]': $!\n");
+    my $zeile=<IN>;
+    close IN || die("$!");
+    return $zeile;
 }
+
 
 sub read_fasta
 {    
