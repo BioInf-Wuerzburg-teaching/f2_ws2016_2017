@@ -12,7 +12,6 @@ while(my $fas1=<FAS>)
 	
     {
 	$header = $1;
-	#@header = split(/\s/,$fas1);
     }
     
     else
