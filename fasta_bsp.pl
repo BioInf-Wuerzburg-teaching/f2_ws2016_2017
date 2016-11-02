@@ -1,30 +1,8 @@
 use warnings;
 use strict;
 use functions;
+use Data::Dumper;
 
-open(FAS,'<', "fasta.txt") or die;
-my $header;
-my %hash;
-
-while(my $fas1=<FAS>)
-{
-    if ($fas1=~/^>(\S+)/) #Dach sagt es soll am Anfang der Zeile sein
-	
-    {
-	$header = $1;
-    }
-    
-    else
-	
-    {
-	chomp $fas1;
-	$hash{$header}.=$fas1;
-    }
-}
+my %hash=&functions::read_fasta("fasta.txt");
 
 print Dumper(\%hash);
-
-close FAS or die;
-
-
-use Data::Dumper;
