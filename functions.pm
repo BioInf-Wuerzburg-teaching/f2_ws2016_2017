@@ -58,8 +58,9 @@ sub datei
 
 sub replace_bases
 {   
-    my @array = @{$_[0]};
-
+    #my @array = @{$_[0]};
+    my @array = @_;
+    
     for(my $i=0; $i<@array; $i++)
     {
 	if($array[$i] eq "T")
@@ -67,7 +68,7 @@ sub replace_bases
 	    $array[$i]= "U";
 	}
     }
-    return@array;
+    return @array;
 }
 
 sub transkription
@@ -84,5 +85,29 @@ sub transkription
 	}
     }
 return @bases;
+}
+
+sub read_fasta
+{
+    open (DATEN,"<",$_[0]) or die;
+    my $header;
+    
+    my %hash;
+    
+    while(my $zeile1=<DATEN>)
+    {
+	if($zeile1=~/^>(\S+)/)
+	{
+	    $header = $1;	
+	}
+	else
+	{
+	    chomp $zeile1;
+	    $hash{$header}.=$zeile1;
+	}
+    }
+    
+    close DATEN or die;
+    return %hash;
 }
 1;
