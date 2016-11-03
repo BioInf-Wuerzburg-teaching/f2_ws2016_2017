@@ -121,4 +121,27 @@ sub read_fasta
   
 }
 
+
+sub fastq
+{
+    open(FASTQ,'<',$_[0]) || die("can't open file '$_[0]': $!\n");
+
+    my $fastqout;
+    
+    while(my $zeile1=<FASTQ>)
+    {	
+	if($zeile1=~/^@(\S+)/)
+	{
+	    my $key=$1;
+	    my $seq=<FASTQ>;
+	    my $plus=<FASTQ>;
+	    my $quali=<FASTQ>;
+	    chomp($seq,$quali);
+	    $fastqout->{$key}=[$seq,$quali];
+	}
+    }
+    close FASTQ || die("$!");
+    return $fastqout;
+    }
+
 1;
