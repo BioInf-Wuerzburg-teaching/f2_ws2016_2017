@@ -72,4 +72,27 @@ sub transcription
     return @bases;
 }
 
+sub fastq
+{
+    my $fastqout;
+    
+    open(FASTQ,'<',$_[0]) or die("cannot open file '$_[0]':$!\n");
+    
+    while (my $zeile=<FASTQ>)
+    {	
+	if ($zeile=~/^@(\S+)/)
+	{
+	    my $key=$1;
+	    my $seq=<FASTQ>;
+	    <FASTQ>;           #dass es weiß, dass es eine Zeile überspringen muss
+	    my $qual=<FASTQ>;
+	    chomp($seq,$qual);
+
+	    $fastqout->{$key}=[$seq,$qual];
+	}
+    }
+    close FASTQ or die("$!");
+    return $fastqout;
+}
+
 1;
