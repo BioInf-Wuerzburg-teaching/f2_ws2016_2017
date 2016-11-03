@@ -94,9 +94,42 @@ sub read_fasta
     close ZEILE || die;
     return %hash;
 }
-#use Data::Dumper;
-#print Dumper(\%hash);
 
+
+sub fastq #returns reference to hash,(key=ID,Array=Data).
+
+{
+ 
+    open (ZEILE,'<',$_[0]) || die("can't open file '$_[0]': $!\n");
+
+
+    my $fastqout;
+
+   
+
+
+    while(my $zeile1=<ZEILE>)
+    { 
+
+	if($zeile1=~/^@(\S+)/)
+	{
+	    my $key=$1;
+
+	    
+	    my $seq=<ZEILE>;
+	    <ZEILE>;
+	    my $qual=<ZEILE>;
+	    chomp($seq,$qual);
+	    $fastqout->{$key}=[$seq,$qual];
+	}
+
+
+    }
+    
+    close ZEILE || die("$!");
+    return $fastqout;
+			 
+}
 
 
 
