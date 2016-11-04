@@ -104,7 +104,16 @@ sub fastq #returns reference to hash,(key=ID,Array=Data).
 
 
     my $fastqout;
-
+    my $offset=$_[1];
+    if (defined $offset)
+    {
+	unless (64==$offset || 33==$offset)
+	{die ("wrong offset")}
+    }
+    else
+    {
+	$offset=33
+    }
    
 
 
@@ -122,7 +131,7 @@ sub fastq #returns reference to hash,(key=ID,Array=Data).
 	    chomp($seq,$qual);
 	    my @base=split(//,$seq);
 	    my @score=split(//,$qual);
-	    my @realscore=map{ord($_)-33}@score;
+	    my @realscore=map{ord($_)-$offset}@score;
 	    $fastqout->{$key}={seq=>\@base,qual=>\@realscore};
 	}
 
