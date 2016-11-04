@@ -127,7 +127,18 @@ sub fastq
     open(FASTQ,'<',$_[0]) || die("can't open file '$_[0]': $!\n");
 
     my $fastqout;
-    my $offset=($_[1]or 33);
+    my $offset=$_[1];
+    if (defined $offset)
+    {
+	unless (64==$offset or 33==$offset)
+	{
+	    die("wrong offset");
+	}
+    }
+    else
+    {
+	$offset=33
+    }
     
     while(my $zeile1=<FASTQ>)
     {	
