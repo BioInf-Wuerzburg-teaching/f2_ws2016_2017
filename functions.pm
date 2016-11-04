@@ -128,7 +128,7 @@ sub fastq
 
     my $fastqout;
     my $offset=$_[1];
-    if (defined $offset)
+    if (defined $offset) #ich erlaube nur offset 33 oder 64
     {
 	unless (64==$offset or 33==$offset)
 	{
