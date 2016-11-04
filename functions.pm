@@ -77,6 +77,19 @@ sub fastq
     my $fastqout;
     
     open(FASTQ,'<',$_[0]) or die("cannot open file '$_[0]':$!\n");
+    my $offset=$_[1];
+    
+    if (defined $offset)
+    {
+	unless (64==$offset or 33==$offset)
+	{
+	    die("wrong offset");
+	}
+    }
+    else
+    {
+	$offset=33;
+    }
     
     while (my $zeile=<FASTQ>)
     {	
@@ -89,7 +102,7 @@ sub fastq
 	    chomp($seq,$qual);
 	    my @bases=split(//,$seq);
 	    my @scores=split(//,$qual);
-	    my @rscores=map{ord($_)-33}@scores;
+	    my @rscores=map{ord($_)-$offset}@scores;
 	    $fastqout->{$key}={"seq"=>\@bases,"quality"=>\@rscores};
 	}
     }
