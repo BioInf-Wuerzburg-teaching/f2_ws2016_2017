@@ -137,7 +137,10 @@ sub fastq
 	    my $plus=<FASTQ>;
 	    my $quali=<FASTQ>;
 	    chomp($seq,$quali);
-	    $fastqout->{$key}=[$seq,$quali];
+	    my @basen=split(//,$seq);
+	    my @scores=split(//,$quali);
+	    my @real_scores=map{ord($_)-33}@scores;
+	    $fastqout->{$key}={"seq"=>\@basen,"quali"=>\@real_scores};
 	}
     }
     close FASTQ || die("$!");
