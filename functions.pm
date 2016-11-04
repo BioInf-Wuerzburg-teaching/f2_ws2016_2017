@@ -87,8 +87,10 @@ sub fastq
 	    <FASTQ>;           #dass es weiß, dass es eine Zeile überspringen muss
 	    my $qual=<FASTQ>;
 	    chomp($seq,$qual);
-
-	    $fastqout->{$key}=[$seq,$qual];
+	    my @bases=split(//,$seq);
+	    my @scores=split(//,$qual);
+	    my @rscores=map{ord($_)-33}@scores;
+	    $fastqout->{$key}={"seq"=>\@bases,"quality"=>\@rscores};
 	}
     }
     close FASTQ or die("$!");
