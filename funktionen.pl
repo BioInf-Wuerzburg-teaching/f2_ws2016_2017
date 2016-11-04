@@ -22,5 +22,6 @@ for (my $i=1;$i<=10;$i++)
 print "\n";
 
 print &functions::add(2,5), "\n\n";
+print &functions::add(2,3),"\n";
 
 

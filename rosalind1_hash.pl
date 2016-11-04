@@ -1,38 +1,18 @@
 use strict;
 use warnings;
 
-my $seq="TGACCCAGCACTGGCGATCTTTATCACGTAATGTACGGCAGGCTGGCCTAGATCCAGTAATGTTGTAACGCTCTACAACACTTTGCAAGGTTCTAATTACCACATGGCTGTATTCCACGCTAAAGGTACCAACCACTAAACCGACATGCTAGCTAGAATGTTCCGACAGTATGTAACGGGTGTCCTATGGATGGGGTCCGGGAACGGTTGATTGGGACAGTCCCGTCCGAGTTTCGGTCGGACTGGTGCACAACCACGGTTACAATCTCAGTAGGCTAGTAAGGTGGCATACTGGTTCGCCTTTCACATGCATGAGTGATAGTGCTCAATTCTGGCAAGTTAACAAACATAAAAGCTCCTGAGGACATCGTATCAATTGGAGAGGAGGGTAAGGAATGTGCATCCGACTGATTTGATGTCGGCGGTGCGGAGCTCCCCAAAGGTATGGTGAACGGCGTACTGACTATAACCGCGGATTTTGCGTAGTGGAGCGGTAAAGGTAGTCTCAACCCAGTTCCGACTGTCAGCCCAGCACTGAGCTACCGCAGGGCAATGGTCCTAGGGCGAGTTCCGCACTGCTTATTCAGGCTGCGCGTCCCAGGAATAGTGATGCCTTAGTCGTTATCGTACCTCGAATATCGCTACAACTGAATGGAGCGCGTTAATCGCAAATACGGGGTTGGACCTGTGGCTGAGGAGGTTTGCTGAGCATAAGTAGATGGAGCGTGGTTGAGCGCTCCGTCTATCCTTCCAGTATATAACCAACCTTCGACCGCGTTAATTCCTTAAGTCCCGCATATTACTGGGTTAGACTCCTGGATTCGCCATGAGACGGGZG";
 
+use functions;
 
-my @bases=split(//,$seq);
-my $l=@bases;
-my %hash=();
-       
-for (my $i=0;$i<$l;$i++)
+my $dna= &functions::openFile("rosalind1seq.txt");
+
+my %huhu= &functions::rosalind1($dna);
+
+#print %huhu;
+
+foreach my $schluessel (sort keys %huhu)
 {
-    my $nucl=$bases[$i];  #aktuelles Nukleotid
-    $hash{$nucl}++;    #legt automatisch neue Buchstaben als Schlüssel an und ordnet jedem dem Wert 1 zu
-    
-}
-
-if (exists $hash{Z})
-{
-    print "Z ist da\n";
-}
-
-print "A ",$hash{"A"},"\n";        #gibt den Wert für A
-
-foreach my $schluessel(sort keys %hash)
-{
-    #if ($schluessel eq "Z")
-    #{
-#	print "Z ist da\n";
-    #}
-    if ($schluessel eq "A")    #nur für A ausgeben
-    {
 	print "$schluessel ";
-	print "$hash{$schluessel}\n";
-    }
+	print $huhu{$schluessel}, "\n";
 }
 
-print "\n";

@@ -72,6 +72,33 @@ sub transcription
     return @bases;
 }
 
+sub read_fasta
+{
+  open(FAS,'<',$_[0]) or die("can't open file '$_[0]': $!");
+  my $header;
+  my %hash;
+
+  while(my $fas1=<FAS>)
+  {
+      if ($fas1=~/^>(\S+)/) #Dach sagt es soll am Anfang der Zeile sein
+	
+      {
+	  $header = $1;
+      }
+    
+      else
+	
+      {
+	  chomp $fas1;
+	  $hash{$header}.=$fas1;
+      }
+  }
+  
+  close FAS or die;
+  return %hash;
+  
+}
+
 sub fastq
 {
     my $fastqout;
