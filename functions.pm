@@ -127,6 +127,7 @@ sub fastq
     open(FASTQ,'<',$_[0]) || die("can't open file '$_[0]': $!\n");
 
     my $fastqout;
+    my $offset=$_[1];
     
     while(my $zeile1=<FASTQ>)
     {	
@@ -139,7 +140,7 @@ sub fastq
 	    chomp($seq,$quali);
 	    my @basen=split(//,$seq);
 	    my @scores=split(//,$quali);
-	    my @real_scores=map{ord($_)-33}@scores;
+	    my @real_scores=map{ord($_)-$offset}@scores;
 	    $fastqout->{$key}={"seq"=>\@basen,"quali"=>\@real_scores};
 	}
     }
