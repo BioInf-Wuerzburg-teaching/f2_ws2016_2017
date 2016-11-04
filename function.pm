@@ -123,7 +123,7 @@ sub fastq #returns reference to hash,(key=ID,Array=Data).
 	    my @base=split(//,$seq);
 	    my @score=split(//,$qual);
 	    my @realscore=map{ord($_)-33}@score;
-	    $fastqout->{$key}=[\@base,\@realscore];
+	    $fastqout->{$key}={seq=>\@base,qual=>\@realscore};
 	}
 
 
