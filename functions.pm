@@ -49,7 +49,7 @@ sub rosalind1
 sub datei
 {
     my $datei=$_[0];
-    open(DATEN,$datei) or die;
+    open(DATEN,"<",$datei) or die;
     my $inhalt=<DATEN>;
     chomp $inhalt;
     close DATEN;
@@ -89,7 +89,7 @@ return @bases;
 
 sub read_fasta
 {
-    open (DATEN,"<",$_[0]) or die;
+    open (DATEN,"<",$_[0]) or die ("$!");
     my $header;
     
     my %hash;
@@ -107,7 +107,32 @@ sub read_fasta
 	}
     }
     
-    close DATEN or die;
+    close DATEN or die ("$!");
     return %hash;
+}
+
+sub fastq
+{
+    open(FASTQ,'<',$_[0]) or die("can't open file '$_[0]': $!\n");
+
+    my $fastqout;
+
+    while(my $zeile1=<FASTQ>)
+    {
+	if($zeile1=~/^@(\S+)/)
+	{
+	    my $key=$1;
+	    my $seq=<FASTQ>;
+	    my $plus=<FASTQ>;
+	    my $quali=<FASTQ>;
+	    chomp($seq,$quali);
+	    my @basen=split(//,$seq);
+	    my @scores=split(//,$quali);
+	    my @real_scores=map{ord($_)-33}@scores;
+	    $fastqout->{$key}=[\@basen,\@real_scores];
+	}
+    }
+    close FASTQ or die("$!");
+    return $fastqout;
 }
 1;
