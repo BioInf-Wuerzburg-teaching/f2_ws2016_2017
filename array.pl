@@ -10,3 +10,7 @@ for($i=0;$i<$ende;$i++)
 {
     print $willi[$i],"\n";
 }
+
+$text='abcdefg';
+@array=split(//,$text);
+
