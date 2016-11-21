@@ -143,6 +143,46 @@ sub fastq #returns reference to hash,(key=ID,Array=Data).
 			 
 }
 
+#DNA to Protein
+sub DNAtoProtein
+{
+    my $protein;
+    open (ZEILE,'<',$_[0]) || die("can't open file '$_[0]': $!\n");
+   
+ my %DNAtoProteintable = (
+     UUU => "F",      CUU => "L",      AUU => "I",      GUU => "V",
+     UUC => "F",      CUC => "L",      AUC => "I",      GUC => "V",
+     UUA => "L",      CUA => "L",      AUA => "I",      GUA => "V",
+     UUG => "L",      CUG => "L",      AUG => "M",      GUG => "V",
+     UCU => "S",      CCU => "P",      ACU => "T",      GCU => "A",
+     UCC => "S",      CCC => "P",      ACC => "T",      GCC => "A",
+     UCA => "S",      CCA => "P",      ACA => "T",      GCA => "A",
+     UCG => "S",      CCG => "P",      ACG => "T",      GCG => "A",
+     UAU => "Y",      CAU => "H",      AAU => "N",      GAU => "D",
+     UAC => "Y",      CAC => "H",      AAC => "N",      GAC => "D",
+     UAA => "Stop",   CAA => "Q",      AAA => "K",      GAA => "E",
+     UAG => "Stop",   CAG => "Q",      AAG => "K",      GAG => "E",
+     UGU => "C",      CGU => "R",      AGU => "S",      GGU => "G",
+     UGC => "C",      CGC => "R",      AGC => "S",      GGC => "G",
+     UGA => "Stop",   CGA => "R",      AGA => "R",      GGA => "G",
+     UGG => "W",      CGG => "R",      AGG => "R",      GGG => "G");
 
+    my @bases=split(//,<ZEILE>);
+    while (@bases>=2)
+    {
+	my $DNAtriplet=shift@bases;
+	$DNAtriplet=$DNAtriplet.shift@bases;
+	$DNAtriplet=$DNAtriplet.shift@bases;
+	if($DNAtriplet eq "UAA" || $DNAtriplet eq "UAG" || $DNAtriplet eq "UGA")
+	{
+	    return $protein;
+	}
+	$protein=$protein.$DNAtoProteintable{$DNAtriplet};
+
+    }
+  close ZEILE || die("$!");
+   # return $DNAtriplet;
+return $protein;
+}
 
 1;
