@@ -1,6 +1,6 @@
 use warnings;
 use strict;
-use functions;
+use function;
 use Data::Dumper;
 
 open (ZEILE,'<',"ros4.txt") or die;
@@ -18,7 +18,10 @@ while (my $zeile=<ZEILE>)
     else
     {
 	chomp $zeile;
+	my $zeile2=<ZEILE>;
+	chomp $zeile2;
 	my @bases=split(//,$zeile);
+	@bases=@bases.split(//,$zeile2);
 	my $length=@bases;
 	
 	if ($bases[$i] eq "G" or "C")
