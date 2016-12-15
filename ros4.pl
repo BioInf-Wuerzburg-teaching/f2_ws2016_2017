@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-my $file = 'data4.txt';
+my $file = 'ros4.txt';
 my %data;
 my $currentSequenceKey;
 
@@ -32,9 +32,11 @@ foreach my $key (sort keys %data) {
     }
 
     $data{$key} = ($counterGC / $counterSum) * 100;
+    $counterGC = 0;
+    $counterSum = 0;
 }
 
 foreach my $key (sort { $data{$b} <=> $data{$a} } keys %data)  {
-    print $key."\n".$data{$key};
+    printf("%s\n%.6f\n", $key, $data{$key});
     exit 0;
 }
