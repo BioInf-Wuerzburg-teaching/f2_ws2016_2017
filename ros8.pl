@@ -19,22 +19,25 @@ my %DNAtoProteintable = (
     UGA => "Stop",   CGA => "R",      AGA => "R",      GGA => "G",
     UGG => "W",      CGG => "R",      AGG => "R",      GGG => "G");
 
-my $file = 'data8.txt';
-my $sequence;
+my $file = 'ros8.txt';
+my $sequence = "";
 my @introns = [];
-my $intronCounter = 0;
+my $intronSectionReached = 0;
+my $isFirstLine = 1;
 
 open(FILE, '<', $file) || die $!;
 while(<FILE>) {
     chomp;
-    if(substr($_, 0, 1) ne '>') {
-        if($intronCounter == 0) {
-            $sequence = $_;
+    if(substr($_, 0, 1) eq '>' && $isFirstLine == 0) {
+        $intronSectionReached = 1;
+    } elsif(substr($_, 0, 1) ne '>') {
+        if($intronSectionReached == 0) {
+            $sequence .= $_;
         } else {
             push(@introns, $_);
         }
-        $intronCounter++;
     }
+    $isFirstLine = 0;
 }
 close FILE || die;
 
